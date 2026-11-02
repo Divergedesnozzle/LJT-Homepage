@@ -36,11 +36,9 @@ jobs:
       - name: Minify JS files
         run: |
           uglifyjs assets/js/plugins/jquery.greedy-navigation.js assets/js/_main.js assets/js/theme.js -c -m -o assets/js/main.min.js
-      - name: Configure GitHub Pages
+      - name: Set site base path
         id: pages
-        uses: actions/configure-pages@v6.0.0
-        with:
-          enablement: true
+        run: echo "base_path=/LJT-Homepage" >> "$GITHUB_OUTPUT"
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
@@ -49,6 +47,7 @@ jobs:
         uses: actions/upload-pages-artifact@v5.0.0
 
   deploy:
+    if: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
