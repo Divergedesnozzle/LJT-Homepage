@@ -1,36 +1,34 @@
 ---
-layout: archive
 title: "Publications"
+layout: archive
 permalink: /publications/
 author_profile: true
+excerpt: "Publications authored and co-authored by Junteng Liu."
 ---
-
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
-
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+<p>The complete publication list is also available in the <a href="{{ base_path }}/">About</a> section. Junteng Liu is the first author of the SynLogic, Perception Bottleneck, and Universal Truthfulness Hyperplane papers.</p>
 
+<h2>2025</h2>
 
+{% assign synlogic = site.publications | where: "title", "SynLogic: Synthesizing Verifiable Reasoning Data at Scale for Learning Logical Reasoning and Beyond" | first %}
+{% include archive-single.html post=synlogic %}
 
+{% assign perception = site.publications | where: "title", "On the Perception Bottleneck of VLMs for Chart Understanding" | first %}
+{% include archive-single.html post=perception %}
+
+<h2>2024</h2>
+
+{% assign hyperplane = site.publications | where: "title", "On the Universal Truthfulness Hyperplane Inside LLMs" | first %}
+{% include archive-single.html post=hyperplane %}
+
+{% assign sharpness = site.publications | where: "title", "In-Context Sharpness as Alerts: An Inner Representation Perspective for Hallucination Mitigation" | first %}
+{% include archive-single.html post=sharpness %}
+
+<h2>2023</h2>
+
+{% assign ceval = site.publications | where: "title", "C-Eval: A Multi-Level Multi-Discipline Chinese Evaluation Suite for Foundation Models" | first %}
+{% include archive-single.html post=ceval %}
+
+{% assign composing = site.publications | where: "title", "Composing Parameter-Efficient Modules with Arithmetic Operations" | first %}
+{% include archive-single.html post=composing %}
