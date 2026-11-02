@@ -2,7 +2,7 @@
 title: "On the Perception Bottleneck of VLMs for Chart Understanding"
 collection: publications
 category: manuscripts
-permalink: /publication/perception-bottleneck-vlms
+permalink: /publication/perception-bottleneck-vlms.html
 year: 2025
 venue: 'arXiv'
 paperurl: 'https://arxiv.org/abs/2503.18435'

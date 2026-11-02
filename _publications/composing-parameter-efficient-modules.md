@@ -2,7 +2,7 @@
 title: "Composing Parameter-Efficient Modules with Arithmetic Operations"
 collection: publications
 category: conferences
-permalink: /publication/composing-parameter-efficient-modules
+permalink: /publication/composing-parameter-efficient-modules.html
 year: 2023
 venue: 'NeurIPS 2023'
 paperurl: 'https://arxiv.org/abs/2306.14870'
